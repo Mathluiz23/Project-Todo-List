@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
-import { MdDeleteForever } from 'react-icons/md';
 import { TiEdit } from 'react-icons/ti';
+import { MdDeleteForever } from 'react-icons/md';
 import '../App.css';
 
 function Todo({ todos, doneTask, removeTask, updateTask,  }) {
