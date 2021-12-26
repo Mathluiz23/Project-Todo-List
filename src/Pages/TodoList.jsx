@@ -5,6 +5,7 @@ import '../App.css';
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
   const [tasksLocalStorage, setTasksLocalStorage] = useState( JSON.parse(localStorage.getItem('tarefa')));
+  
     const tasks = tasksLocalStorage;
     localStorage.setItem('tarefa', JSON.stringify(tasks));
   // setTodos(tasksLocalStorage);
