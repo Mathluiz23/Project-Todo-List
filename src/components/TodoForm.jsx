@@ -31,7 +31,7 @@ export default function TodoForm(props) {
             className='todo-input edit'
           />
           <button onClick={handleSubmit} className='todo-button edit'>
-          <h4>Atualizar</h4>
+          <h4>Update</h4>
           </button>
         </>
       ) : (

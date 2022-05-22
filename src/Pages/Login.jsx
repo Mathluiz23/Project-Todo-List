@@ -13,6 +13,7 @@ export default function Login() {
   function loginValidacao() {
     const regex = /.+@.+\.[A-Za-z]+$/;
     const minLength = 5;
+
     if (user.password.length > minLength && regex.test(user.email)) {
       setButtonLogin(false);
     } else {
@@ -62,7 +63,7 @@ export default function Login() {
           onClick={ handleClick }
           className='button-entrar'
         >
-          Entrar
+          Sign In
         </button>
     </div>
   );
