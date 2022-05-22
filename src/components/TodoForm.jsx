@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import '../App.css';
 
 export default function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -24,7 +23,7 @@ export default function TodoForm(props) {
       {props.edit ? (
         <>
           <input
-            placeholder='Atualizar tarefa'
+            placeholder='Update Task'
             value={input}
             onChange={handleChange}
             name='text'
@@ -37,7 +36,7 @@ export default function TodoForm(props) {
       ) : (
         <>
           <input
-            placeholder='Adicionar nova tarefa'
+            placeholder='Add new task'
             value={input}
             onChange={handleChange}
             name='text'

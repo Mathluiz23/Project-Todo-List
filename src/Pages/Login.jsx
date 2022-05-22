@@ -44,7 +44,7 @@ export default function Login() {
         <Input
           onChange={ handleChange }
           type="email"
-          placeholder="Email"
+          placeholder="E-mail"
           name="email"
           className="input-login"
         />
