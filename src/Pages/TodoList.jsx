@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TodoForm from '../components/TodoForm';
 import Todo from '../components/Todo';
 import '../App.css';
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
-  const [tasksLocalStorage, setTasksLocalStorage] = useState( JSON.parse(localStorage.getItem('tarefa')));
+  const [tasksLocalStorage, setTasksLocalStorage] = useState('');
 
   console.log(tasksLocalStorage);
+
+  useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem('tarefa'))
+  )}, [setTodos])
   
-  const tasks = tasksLocalStorage;
-  localStorage.setItem('tarefa', JSON.stringify(tasks));
     
   function addTodo(todo) {
     if (!todo.text) {
@@ -54,7 +56,7 @@ export default function TodoList() {
       <h1>What is your plan for today?</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
-        todos={todos && tasksLocalStorage}
+        todos={todos}
         doneTask={doneTask}
         removeTask={removeTask}
         updateTask={updateTask}
