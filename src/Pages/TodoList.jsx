@@ -9,8 +9,10 @@ export default function TodoList() {
 
   
   useEffect(() => {
-    localStorage.setItem('tarefa', JSON.stringify(tasksLocalStorage))   
-  }, [todos])
+    const task = localStorage.setItem('tarefa', JSON.stringify(todos));
+    setTasksLocalStorage(task);
+    // setTodos(task);
+  }, [tasksLocalStorage])
   
   function addTodo(todo) {
     if (!todo.text) {
@@ -55,7 +57,7 @@ export default function TodoList() {
       <div>
       <TodoForm onSubmit={addTodo} />
       <Todo
-        todos={ tasksLocalStorage }
+        todos={ todos }
         doneTask={doneTask}
         removeTask={removeTask}
         updateTask={updateTask}

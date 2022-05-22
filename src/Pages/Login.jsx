@@ -32,7 +32,7 @@ export default function Login() {
   function handleClick() {
     const { email } = user;
     localStorage.setItem('user', JSON.stringify({ email }));
-    navigate("/todolist")
+    navigate("/task")
   }
 
   return (
