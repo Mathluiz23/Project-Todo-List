@@ -5,15 +5,13 @@ import '../App.css';
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
-  const [tasksLocalStorage, setTasksLocalStorage] = useState('');
+  const [tasksLocalStorage, setTasksLocalStorage] = useState(JSON.parse(localStorage.getItem('tarefa')));
 
-  console.log(tasksLocalStorage);
-
-  useEffect(() => {
-    setTodos(JSON.parse(localStorage.getItem('tarefa'))
-  )}, [setTodos])
   
-    
+  useEffect(() => {
+    localStorage.setItem('tarefa', JSON.stringify(tasksLocalStorage))   
+  }, [todos])
+  
   function addTodo(todo) {
     if (!todo.text) {
       return;
@@ -54,13 +52,15 @@ export default function TodoList() {
   return (
     <>
       <h1>What is your plan for today?</h1>
+      <div>
       <TodoForm onSubmit={addTodo} />
       <Todo
-        todos={todos}
+        todos={ tasksLocalStorage }
         doneTask={doneTask}
         removeTask={removeTask}
         updateTask={updateTask}
       />
+      </div>
     </>
   );
 }

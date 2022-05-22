@@ -6,6 +6,7 @@ import '../App.css';
 
 function Todo({ todos, doneTask, removeTask, updateTask,  }) {
   const [editTask, setEditTask] = useState({ value: ''});
+  console.log(todos);
   
   function submitUpdate(value) {
     updateTask(editTask.id, value);
